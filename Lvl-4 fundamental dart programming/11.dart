@@ -1,0 +1,21 @@
+//Write a Program to check the given year is leap year or not.
+import 'dart:io';
+
+void main() {
+  // Ask user for input
+  print("Enter a year:");
+  int year = int.parse(stdin.readLineSync()!);
+
+  // Check if the year is a leap year
+  if (isLeapYear(year)) {
+    print("$year is a leap year.");
+  } else {
+    print("$year is not a leap year.");
+  }
+}
+
+// Function to check if a year is a leap year
+bool isLeapYear(int year) {
+  // A leap year is divisible by 4, but not divisible by 100 unless divisible by 400
+  return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
